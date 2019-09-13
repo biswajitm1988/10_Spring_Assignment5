@@ -47,14 +47,14 @@ public class SubjectHelper {
         return bookDetailsList;
     }
 
-    public List<Subject> searchBySuration(String searchDuration) throws Exception {
+    public List<Subject> searchByDuration(String searchDuration) throws Exception {
         int SubCount = subjectDao.getAllSubjectCount();
         List<Subject> subDetailsList  = new ArrayList<>();
         if (SubCount==0) {
             System.out.println("There are no subjects in the system");
             return subDetailsList;
         }
-        subDetailsList = subjectDao.searchBySuration(searchDuration);
+        subDetailsList = subjectDao.searchBySuration(Integer.parseInt(searchDuration));
         if(CollectionUtils.isEmpty(subDetailsList)){
             System.out.println("no Subject found for your search : "+searchDuration);
         }else{

@@ -39,7 +39,7 @@ public class BookController {
     @ResponseBody
     public String searchSubjectByDur(@RequestParam(name = "searchDuration") String searchDuration) throws Exception {
         System.out.println("Book Controller searchDuration >> "+searchDuration);
-        List<Subject> subjects = subjectHelper.searchBySuration(searchDuration);
+        List<Subject> subjects = subjectHelper.searchByDuration(searchDuration);
         return subjectHelper.transformToHtml(subjects);
     }
 

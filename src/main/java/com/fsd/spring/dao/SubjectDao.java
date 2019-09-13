@@ -42,7 +42,7 @@ public class SubjectDao {
 		return subjectList;
 	}
 
-    public List<Subject> searchBySuration(String searchDuration) {
+    public List<Subject> searchBySuration(int searchDuration) {
 		List<Subject> subjects = subjectRepository.findByDurationInHours(searchDuration);
 		return subjects;
     }

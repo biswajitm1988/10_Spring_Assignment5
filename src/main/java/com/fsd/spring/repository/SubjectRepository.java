@@ -17,7 +17,7 @@ public interface SubjectRepository extends JpaRepository<Subject, Integer> {
     List<Book> findBySubtitleContaining(@Param("subtitle") String subtitle);
 
     @Query("select s from Subject s where durationInHours =:durationInHours")
-    List<Subject> findByDurationInHours(@Param("durationInHours") String durationInHours);
+    List<Subject> findByDurationInHours(@Param("durationInHours") int durationInHours);
 
     @Modifying
     @Query("delete from Subject where lower(subtitle) like %:subtitle%")
